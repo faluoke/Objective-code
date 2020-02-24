@@ -13,9 +13,10 @@ function Job(props) {
           totalSkillCount.push(skill);
           return totalSkillCount.length;
         }
+        return false;
       });
+      return false;
     });
-    console.log(applicantSkillCount);
   };
   // used to get row count for applicant-name, email, website & coverletter rows
   const getApplicantSkillCount = () => {
@@ -75,7 +76,7 @@ function Job(props) {
       {skillsClone.map(skill => {
         if (skill.applicant_id === props.applicants[0].id) {
           return (
-            <tr>
+            <tr key={skill.id}>
               <td>{skill.name}</td>
             </tr>
           );
@@ -87,7 +88,7 @@ function Job(props) {
         const skillsClone = [...props.skills];
         if (props.jobId === applicant.job_id) {
           return (
-            <>
+            <React.Fragment key={applicant.id}>
               <tr>
                 {/* renders an appicant component */}
                 <Applicant
@@ -124,7 +125,7 @@ function Job(props) {
                 }
                 return false;
               })}
-            </>
+            </React.Fragment>
           );
         }
         return false;
