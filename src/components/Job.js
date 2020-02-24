@@ -40,8 +40,10 @@ function Job(props) {
   return (
     <>
       {/* displays job-name & first applicant information */}
-      <tr className="job-name">
-        <td rowSpan={totalSkillCount.length}>{props.jobName}</td>
+      <tr>
+        <td className="job-name" rowSpan={totalSkillCount.length}>
+          {props.jobName}
+        </td>
         <td className="applicant-name" rowSpan={applicantSkillCount.length}>
           {props.applicants[0].name}
         </td>
