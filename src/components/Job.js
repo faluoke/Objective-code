@@ -49,10 +49,14 @@ function Job(props) {
           {props.applicants[0].name}
         </td>
         <td rowSpan={applicantSkillCount.length}>
-          {props.applicants[0].email}
+          <a href={`mailto:${props.applicants[0].email}`}>
+            {props.applicants[0].email}
+          </a>
         </td>
         <td rowSpan={applicantSkillCount.length}>
-          {props.applicants[0].website}
+          <a href={`http://${props.applicants[0].website}`}>
+            {props.applicants[0].website}
+          </a>
         </td>
         <td>
           {/* gets first skill mapping through skills prop and display on ui */}
